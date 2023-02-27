@@ -29,12 +29,19 @@
             <source src="assets/Rick Astley - Never Gonna Give You Up.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+
+        <br>
+
+        <span id='rickrollText'>You've been rickrolled!</span>
     </body>
-    <script>
+    <script type="text/javascript">
         const rickroll = document.getElementById('rickroll')
-        
-        rickroll.addEventListener("loadstart", function () {
-          console.log(‘start loading ...’)
-        },false);
+        const rickrollText = document.getElementById('rickrollText')
+
+        rickrollText.style.display = 'none'
+
+        rickroll.onplaying = function() {
+            rickrollText.style.display = 'block'
+        }
     </script>
 </html>
